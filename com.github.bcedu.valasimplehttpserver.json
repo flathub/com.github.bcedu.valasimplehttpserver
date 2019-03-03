@@ -27,7 +27,7 @@
                 {
                     "type" : "git",
                     "url" : "https://github.com/bcedu/ValaSimpleHTTPServer.git",
-                    "commit" : "3871f23fdc997d0ef137a7b46678b527e075f0c4"
+                    "commit" : "00df9f8c91fc4758723e395022660e440b037001" 
                 }
             ]
         }
