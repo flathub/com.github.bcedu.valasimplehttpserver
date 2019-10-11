@@ -24,6 +24,10 @@
                     "type" : "git",
                     "url" : "https://github.com/bcedu/ValaSimpleHTTPServer.git",
                     "commit" : "74b3e3b5ae2380f3a4027f4ecfa9cc734abf4f97" 
+                },
+                {
+                    "type": "patch",
+                    "path": "eos-theme.patch"
                 }
             ]
         }
