@@ -1,0 +1,11 @@
+--- a/src/application.vala	2019-10-11 21:44:23.580952210 +0200
++++ b/src/application.vala	2019-10-11 21:46:06.906863084 +0200
+@@ -56,6 +56,8 @@
+         public override void activate () {
+             if (controller == null) {
+                 controller = new AppController (this);
++                Gtk.Settings.get_default().set_property("gtk-theme-name", "elementary");
++                Gtk.Settings.get_default().set_property("gtk-icon-theme-name", "elementary");
+             }
+ 
+             controller.activate ();
