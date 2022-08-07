@@ -1,0 +1,26 @@
+From f4708017984e797a0d2fe984330672519a0476a4 Mon Sep 17 00:00:00 2001
+From: bbhtt <62639087+bbhtt@users.noreply.github.com>
+Date: Sun, 7 Aug 2022 21:44:05 +0530
+Subject: [PATCH] Fix appdata
+
+Appdata shouldn't have any hyperlinks.
+---
+ data/com.github.bcedu.valasimplehttpserver.appdata.xml.in | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/data/com.github.bcedu.valasimplehttpserver.appdata.xml.in b/data/com.github.bcedu.valasimplehttpserver.appdata.xml.in
+index 39d8611..26f3d6b 100644
+--- a/data/com.github.bcedu.valasimplehttpserver.appdata.xml.in
++++ b/data/com.github.bcedu.valasimplehttpserver.appdata.xml.in
+@@ -48,7 +48,7 @@ Do you have a film on the computer and you want to watch it on your mobile phone
+             <li>Display file type</li>
+             <li>Display modifications date</li>
+           </ul>
+-          <p>Special thanks to @amka (https://github.com/amka) for this incredible work!</p>
++          <p>Special thanks to @amka for this incredible work!</p>
+         </description>
+       </release>
+       <release version="1.5.0" date="2021-12-28">
+-- 
+2.37.1
+

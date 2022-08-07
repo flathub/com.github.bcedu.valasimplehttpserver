@@ -5,6 +5,10 @@
     "base" : "io.elementary.BaseApp",
     "base-version" : "juno-21.08",
     "sdk": "org.gnome.Sdk",
+    "build-options" : {
+        "prepend-path" : "/usr/lib/sdk/vala/bin/",
+        "prepend-ld-library-path" : "/usr/lib/sdk/vala/lib"
+    },
     "command": "com.github.bcedu.valasimplehttpserver",
     "finish-args": [
         "--share=ipc",
@@ -30,7 +34,6 @@
         {
             "name": "VServer",
             "buildsystem": "meson",
-            "config-opts": ["-Dlibunity=false", "-Dubuntu-bionic-patched-vte=false"],
             "sources": [
                 {
                     "type" : "git",
@@ -41,6 +44,10 @@
                 {
                     "type": "patch",
                     "path": "eos-theme.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "appdata.patch"
                 }
             ]
         }
