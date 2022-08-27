@@ -1,6 +1,17 @@
---- a/src/application.vala	2019-10-11 21:44:23.580952210 +0200
-+++ b/src/application.vala	2019-10-11 21:46:06.906863084 +0200
-@@ -56,6 +56,8 @@
+From a696b7c7b863afad7ad86d799ac589d3ecbe064d Mon Sep 17 00:00:00 2001
+From: bbhtt <62639087+bbhtt@users.noreply.github.com>
+Date: Sun, 7 Aug 2022 09:37:53 +0530
+Subject: [PATCH] Patch: use eOS theme
+
+---
+ src/Application.vala | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/src/Application.vala b/src/Application.vala
+index 2f9a318..371821a 100644
+--- a/src/Application.vala
++++ b/src/Application.vala
+@@ -56,6 +56,8 @@ namespace App {
          public override void activate () {
              if (controller == null) {
                  controller = new AppController (this);
@@ -9,3 +20,6 @@
              }
  
              controller.activate ();
+-- 
+2.37.1
+
