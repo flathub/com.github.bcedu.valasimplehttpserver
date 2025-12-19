@@ -1,13 +1,16 @@
 {
     "app-id": "com.github.bcedu.valasimplehttpserver",
-    "runtime": "org.gnome.Platform",
-    "runtime-version" : "44",
+    "runtime": "org.freedesktop.Platform",
+    "runtime-version" : "24.08",
     "base" : "io.elementary.BaseApp",
-    "base-version" : "juno-22.08",
-    "sdk": "org.gnome.Sdk",
-    "build-options" : {
-        "prepend-path" : "/usr/lib/sdk/vala/bin/",
-        "prepend-ld-library-path" : "/usr/lib/sdk/vala/lib"
+    "base-version" : "circe-24.08",
+    "sdk": "org.freedesktop.Sdk",
+    "sdk-extensions": [
+        "org.freedesktop.Sdk.Extension.vala"
+    ],
+    "build-options": {
+        "prepend-path": "/usr/lib/sdk/vala/bin/",
+        "prepend-ld-library-path": "/usr/lib/sdk/vala/lib"
     },
     "command": "com.github.bcedu.valasimplehttpserver",
     "finish-args": [
@@ -19,6 +22,44 @@
         "--filesystem=home"
     ],
     "modules": [
+        {
+           "name": "libgee",
+            "build-options" : {
+                "make-install-args" : [
+                    "girdir=/app/share/gir-1.0",
+                    "typelibdir=/app/lib/girepository-1.0"
+                ]
+            },
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/libgee/0.20/libgee-0.20.8.tar.xz",
+                    "sha256": "189815ac143d89867193b0c52b7dc31f3aa108a15f04d6b5dca2b6adfad0b0ee"
+                }
+            ]
+        },
+        {
+            "name" : "libhandy",
+            "buildsystem" : "meson",
+            "cleanup": [
+                "*.a"
+            ],
+            "config-opts" : [
+                "-Dexamples=false",
+                "-Dprofiling=false",
+                "-Dglade_catalog=disabled",
+                "-Dintrospection=enabled",
+                "-Dtests=false",
+                "-Dvapi=true"
+            ],
+            "sources" : [
+                {
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/libhandy/1.8/libhandy-1.8.3.tar.xz",
+                    "sha256": "05b497229073ff557f10b326e074c5066f8743a302d4820ab97bcb5cd2dab087"
+                }
+            ]
+        },
         {
             "name": "libqrencode",
             "buildsystem": "autotools",
