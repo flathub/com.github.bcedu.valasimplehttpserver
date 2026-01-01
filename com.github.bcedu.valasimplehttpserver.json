@@ -1,14 +1,10 @@
 {
     "app-id": "com.github.bcedu.valasimplehttpserver",
     "runtime": "org.gnome.Platform",
-    "runtime-version" : "44",
+    "runtime-version" : "49",
     "base" : "io.elementary.BaseApp",
-    "base-version" : "juno-22.08",
+    "base-version" : "circe-25.08",
     "sdk": "org.gnome.Sdk",
-    "build-options" : {
-        "prepend-path" : "/usr/lib/sdk/vala/bin/",
-        "prepend-ld-library-path" : "/usr/lib/sdk/vala/lib"
-    },
     "command": "com.github.bcedu.valasimplehttpserver",
     "finish-args": [
         "--share=ipc",
@@ -49,6 +45,11 @@
                     "type": "patch",
                     "path": "appdata.patch"
                 }
+            ],
+            "post-install": [
+                "mkdir -p /app/share/icons/hicolor/scalable/apps",
+                "mv /app/share/icons/hicolor/${FLATPAK_ID}.svg /app/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg",
+                "find /app/share/icons/hicolor -type f -not -path \"*scalable*\" -not -path \"*actions*\" -name \"*.svg\" -delete"
             ]
         }
     ]

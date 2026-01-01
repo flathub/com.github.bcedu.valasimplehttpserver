@@ -1,17 +1,24 @@
-From f4708017984e797a0d2fe984330672519a0476a4 Mon Sep 17 00:00:00 2001
-From: bbhtt <62639087+bbhtt@users.noreply.github.com>
-Date: Sun, 7 Aug 2022 21:44:05 +0530
-Subject: [PATCH] Fix appdata
+From cdc1f9f0784c94c583e21fe56b0189ce89dad827 Mon Sep 17 00:00:00 2001
+From: Sabri Ünal <yakushabb@gmail.com>
+Date: Fri, 19 Dec 2025 23:35:31 +0300
+Subject: [PATCH] Fix appdata papercuts
 
-Appdata shouldn't have any hyperlinks.
 ---
- data/com.github.bcedu.valasimplehttpserver.appdata.xml.in | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ data/com.github.bcedu.valasimplehttpserver.appdata.xml.in | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
 
 diff --git a/data/com.github.bcedu.valasimplehttpserver.appdata.xml.in b/data/com.github.bcedu.valasimplehttpserver.appdata.xml.in
-index 39d8611..26f3d6b 100644
+index 39d8611..60e25eb 100644
 --- a/data/com.github.bcedu.valasimplehttpserver.appdata.xml.in
 +++ b/data/com.github.bcedu.valasimplehttpserver.appdata.xml.in
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <!-- Copyright 2018 Eduard Berloso Clarà <eduard.bc.95@gmail.com> -->
+-<component type="desktop">
++<component type="desktop-application">
+     <id>com.github.bcedu.valasimplehttpserver</id>
+     <metadata_license>CC0-1.0</metadata_license>
+     <project_license>GPL-3.0+</project_license>
 @@ -48,7 +48,7 @@ Do you have a film on the computer and you want to watch it on your mobile phone
              <li>Display file type</li>
              <li>Display modifications date</li>
@@ -21,6 +28,22 @@ index 39d8611..26f3d6b 100644
          </description>
        </release>
        <release version="1.5.0" date="2021-12-28">
--- 
-2.37.1
+@@ -108,12 +108,14 @@ Do you have a film on the computer and you want to watch it on your mobile phone
+     <provides>
+         <binary>com.github.bcedu.valasimplehttpserver</binary>
+     </provides>
++    <launchable type="desktop-id">com.github.bcedu.valasimplehttpserver.desktop</launchable>
+     <url type="homepage">https://github.com/bcedu/ValaSimpleHTTPServer</url>
+     <url type="bugtracker">https://github.com/bcedu/ValaSimpleHTTPServer/issues</url>
+     <url type="translate">https://github.com/bcedu/ValaSimpleHTTPServer/tree/master/po#readme</url>
+     <url type="help">https://github.com/bcedu/ValaSimpleHTTPServer/issues</url>
++    <url type="vcs-browser">https://github.com/bcedu/ValaSimpleHTTPServer</url>
+     <update_contact>eduard.bc.95@gmail.com</update_contact>
+-    <content_rating type="oars-1.0">
++    <content_rating type="oars-1.1">
+       <content_attribute id="social-chat">mild</content_attribute>
+     </content_rating>
+ </component>
+--
+libgit2 1.7.2
 
